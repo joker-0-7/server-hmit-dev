@@ -9,6 +9,7 @@ const cors = require("cors");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var applicationRouter = require("./routes/application");
+var doctorsRouter = require("./routes/doctor");
 const { default: mongoose } = require("mongoose");
 
 var app = express();
@@ -36,6 +37,7 @@ mongoose
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/application", applicationRouter);
+app.use("/doctor", doctorsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

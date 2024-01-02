@@ -7,7 +7,7 @@ const verifyToken = (req, res, next) => {
     req.current = decoded.id;
     next();
   } catch (err) {
-    return res.status(401).json({ msg: "يباشا سجل من اول وجديد" });
+    return res.status(401).json({ msg: "You Shoud Sign In" });
   }
 };
 module.exports = verifyToken;

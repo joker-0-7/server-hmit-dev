@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const studentSchema = new mongoose.Schema(
   {
-    firstName: {
+    fristName: {
       type: String,
       required: true,
     },
@@ -29,7 +29,7 @@ const studentSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    Specialization: {
+    specialization: {
       type: String,
       required: true,
     },

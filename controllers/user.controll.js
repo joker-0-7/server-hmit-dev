@@ -42,9 +42,7 @@ const updateStudent = async (req, res) => {
   }
 };
 const deleteStudent = async (req, res) => {
-  const user = await User.findById(req.params.id);
   try {
-    // fs.unlinkSync(`../public/images/${user.image}`);
     const del = await Student.findByIdAndDelete(req.params.id);
   } catch (err) {
     console.log(err);
@@ -59,6 +57,11 @@ const addSeatingNumbers = async (req, res) => {
   data.map((student) => addNum(student));
   console.log(data);
 };
+const updateData = async (req, res) => {
+  const id = req.params.id;
+  console.log(req.body);
+  const user = await User.findByIdAndUpdate(id, req.body);
+};
 module.exports = {
   Login,
   addNewStudent,
@@ -67,4 +70,5 @@ module.exports = {
   updateStudent,
   deleteStudent,
   addSeatingNumbers,
+  updateData,
 };
